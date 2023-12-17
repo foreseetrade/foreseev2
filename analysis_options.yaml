@@ -1,0 +1,21 @@
+
+# The analyzer can also be invoked from the command line by running `flutter analyze`.
+# Additional information about this file can be found at
+# https://dart.dev/guides/language/analysis-options
+
+include: package:flutter_lints/flutter.yaml
+
+linter:
+  
+  rules:
+    avoid_print: false  
+    avoid_unnecessary_containers: true
+    avoid_unused_constructor_parameters: true
+    camel_case_types: true
+    constant_identifier_names: true
+    control_flow_in_finally: true
+    curly_braces_in_flow_control_structures: true
+    prefer_single_quotes: true
+
+
+

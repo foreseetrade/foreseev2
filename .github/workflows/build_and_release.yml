@@ -1,0 +1,17 @@
+name: Build and Release
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build-and-release:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Builds - build Flutter APK and create GitHub release
+        uses: Dank-del/flutter-build-and-publish-action@v1
