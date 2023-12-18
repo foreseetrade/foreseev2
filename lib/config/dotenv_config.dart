@@ -6,7 +6,7 @@ late String supabaseKey;
 
 Future<void> loadEnv() async {
   if (dotenv.env['dotenv_filename'] != '') {
-    await dotenv.load(fileName: '.env');
+    await dotenv.load(fileName: 'assets/.env');
   }
 
   supabaseUrl = dotenv.env['SUPABASE_URL'] ?? '';
