@@ -16,12 +16,12 @@ workflows:
     scripts:
         - name: Setup the Keystore
           script: |
-            echo $KEYSTORE_FILE | base64 --decode > /keys/keystore.jks
+            echo $KEYSTORE_FILE | base64 --decode > /tmp/foreseetest_keystore.jks
             cat >> "$CM_BUILD_DIR/android/key.properties" <<EOF
             storePassword=$KEYSTORE_STORE_PASSWORD
             keyPassword=$KEYSTORE_KEY_PASSWORD
             keyAlias=foreseetest_keystore
-            storeFile=/keys/keystore.jks
+            storeFile=/tmp/foreseetest_keystore.jks
             EOF
 
         - name: Build Android App Bundle AAB
