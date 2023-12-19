@@ -2,6 +2,7 @@
 
 import "package:flutter/material.dart";
 import 'package:foreseev2/screens/auth/login_screen.dart';
+import 'package:foreseev2/screens/payment/razorpay_screen.dart';
 import 'package:foreseev2/screens/second_screen.dart';
 import "package:supabase_flutter/supabase_flutter.dart";
 
@@ -51,6 +52,18 @@ class _HomeScreenState extends State<HomeScreen> {
                 );
               },
               child: const Text('Login'),
+            ),
+            ElevatedButton(
+              onPressed: () {
+                // Navigate to the Payment page on button click
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => RazorpayScreen(),
+                  ),
+                );
+              },
+              child: const Text('Payment Screen'),
             ),
           ],
         ),
