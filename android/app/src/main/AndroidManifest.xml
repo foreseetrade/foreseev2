@@ -23,11 +23,33 @@
                 <action android:name="android.intent.action.MAIN"/>
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
+
+            <!-- OPTLess Config -->
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <data
+                    android:host="otpless"
+                    android:scheme= "${applicationId}.otpless"/>
+            </intent-filter>
+            <!-- OPTLess Config -->
         </activity>
+
         <!-- Don't delete the meta-data below.
              This is used by the Flutter tool to generate GeneratedPluginRegistrant.java -->
+            
+            <!-- OPTLess Config L: 45,46 -->
         <meta-data
             android:name="flutterEmbedding"
-            android:value="2" />
+            android:value="2"
+            android:launchMode="singleTop"
+            android:exported="true"
+        />
+            
     </application>
+    <!-- Add BLUETOOTH permissions -->
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <!-- <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" /> -->
+
 </manifest>

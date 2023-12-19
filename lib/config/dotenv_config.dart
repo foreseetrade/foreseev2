@@ -1,6 +1,3 @@
-// With prefix (optional)
-import 'dart:io' as io;
-
 import 'package:supabase_flutter/supabase_flutter.dart';
 
 String? supabaseUrl;
@@ -24,3 +21,14 @@ Future<void> loadEnv() async {
 SupabaseClient initializeSupabase() {
   return SupabaseClient(supabaseUrl!, supabaseKey!);
 }
+
+  // // Initialize Supabase using your Supabase URL and anonymous key
+  // final supabase = SupabaseAuth(
+  //   supabaseUrl, supabaseKey,
+  //   autoRefreshToken: true, // Optionally, enable token auto-refresh
+  // );
+
+  // // Initialize async storage for Supabase
+  // supabase.setStorage(SupabaseLocalStorage(
+  //   'your_supabase_storage_key', // Replace with your storage key
+  // ));

@@ -2,6 +2,7 @@
 
 import "package:flutter/material.dart";
 import 'package:foreseev2/screens/auth/login_screen.dart';
+import 'package:foreseev2/screens/auth/otpless_screen.dart';
 import 'package:foreseev2/screens/payment/razorpay_screen.dart';
 import 'package:foreseev2/screens/second_screen.dart';
 import "package:supabase_flutter/supabase_flutter.dart";
@@ -43,7 +44,7 @@ class _HomeScreenState extends State<HomeScreen> {
             ),
             ElevatedButton(
               onPressed: () {
-                // Navigate to the second page on button click
+                // Navigate to the Login page on button click
                 Navigator.push(
                   context,
                   MaterialPageRoute(
@@ -64,6 +65,18 @@ class _HomeScreenState extends State<HomeScreen> {
                 );
               },
               child: const Text('Payment Screen'),
+            ),
+            ElevatedButton(
+              onPressed: () {
+                // Navigate to the Payment page on button click
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => OtplessScreen(),
+                  ),
+                );
+              },
+              child: const Text('OTPLESS Screen'),
             ),
           ],
         ),

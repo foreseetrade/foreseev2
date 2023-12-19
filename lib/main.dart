@@ -1,20 +1,26 @@
 import 'package:flutter/material.dart';
 import 'package:foreseev2/screens/auth/login_screen.dart';
+import 'package:foreseev2/screens/auth/otpless_screen.dart';
 import 'package:foreseev2/screens/home_screen.dart';
 import 'package:foreseev2/config/dotenv_config.dart';
 import 'package:foreseev2/screens/payment/razorpay_screen.dart';
 import 'package:foreseev2/screens/second_screen.dart';
+import 'package:foreseev2/screens/permissions/bluetooth_screen.dart';
 
 Future<void> main() async {
 // void main() {
   WidgetsFlutterBinding.ensureInitialized();
-  await loadEnv(); // Load environment variables
+  
+  await fnRequestBluetoothPermissions();
+  await loadEnv(); 
+
+  
   runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
   final supabase = initializeSupabase();
-
+  
   MyApp({super.key});
 
   @override
@@ -26,7 +32,8 @@ class MyApp extends StatelessWidget {
         '/': (context) => HomeScreen(supabase: supabase),
         '/second': (context) => SecondScreen(supabase: supabase),
         '/login': (context) => LoginScreen(supabase: supabase),
-        '/payment':(context) => RazorpayScreen(),
+        '/payment':(context) => const RazorpayScreen(),
+        '/optlesslogin':(context) => const OtplessScreen(),
       },
     );
   }

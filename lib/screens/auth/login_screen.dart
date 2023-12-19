@@ -1,6 +1,8 @@
 
 import 'package:flutter/material.dart';
+import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
+
 
 class LoginScreen extends StatefulWidget {
   final SupabaseClient supabase;
@@ -12,14 +14,23 @@ class LoginScreen extends StatefulWidget {
 }
 
 class _LoginScreenState extends State<LoginScreen> {
+//  late final GotrueClient gotrueClient;
 
- fnLogin() async {
+fnLogin() async {
 
+// final gotrueClient = GotrueClient(
+//   url: 'https://rlhkgxztxhzpnmrvfojj.supabase.co',
+//   asyncStorage: FlutterSecureStorage(), // Or SharedPreferences()
+// );
 
 final AuthResponse res = await widget.supabase.auth.signUp(
-  email: 'example@email.com',
-  password: 'example-password',
+  email: 'geniwa2260@aseall.com',
+  password: 'Test@12345',
+  data: {'username': 'testuser'},
 );
+
+print('Login response:');
+print(res);
 final Session? session = res.session;
 final User? user = res.user;
 print({session, user});
