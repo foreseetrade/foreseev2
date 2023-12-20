@@ -34,4 +34,4 @@ workflows:
     publishing:
         google_play:
           credentials: $GOOGLE_PLAY_SERVICE_ACCOUNT
-          track: alpha
+          track: draft
