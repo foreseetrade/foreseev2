@@ -72,10 +72,10 @@ class _RazorpayScreenState extends State<RazorpayScreen> {
         body: Center(
           child: Column(
             children: [
-              Text('Razorpay Screen'),
+              const Text('Razorpay Screen'),
               ElevatedButton(
                 onPressed: openCheckout,
-                child: Text('Pay Now'),
+                child: const Text('Pay Now'),
               ),
             ],
           ),

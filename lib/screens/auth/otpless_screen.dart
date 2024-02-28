@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:foreseev2/apis/api_functions.dart';
+import 'package:foreseev2/screens/home_screen.dart';
 import 'package:foreseev2/screens/permissions/bluetooth_screen.dart';
 import 'package:otpless_flutter/otpless_flutter.dart';
-
-// Assuming _otplessFlutterPlugin initialization and import
 
 class OtplessScreen extends StatefulWidget {
   const OtplessScreen({super.key});
@@ -27,7 +27,25 @@ class _OtplessScreenState extends State<OtplessScreen> {
       if (result['data'] != null) {
         final token = result['data']['token'];
         message = 'token: $token';
-        // Handle token retrieval or further operations here
+
+// Verify token from an API on Backend and redirect to Homepage or / route
+        // apiVerifyToken({'token': token}).then((value) {
+        //   if (value['data'] != null) {
+        //     final token = value['data']['token'];
+        //     message = 'token: $token';
+        //     // Handle token retrieval or further operations here
+        //     Navigator.push(
+        //       context,
+        //       MaterialPageRoute(builder: (context) => HomeScreen()),
+        //     );
+        //   } else {
+        //     // Handle error here
+        //   }
+        // }).catchError((error) {
+        //   // Handle error here
+        //   print(error);
+        // });
+
         print('OTPless message:');
         print(message);
       } else {
